@@ -1,10 +1,12 @@
-import time
 import subprocess
 from flask import * 
 
 app = Flask(__name__)
 
 global before_content, after_content, proc
+
+# before_content and after_content represent the content to place before and after the program to capture the output on output.txt. 
+
 before_content = """from time import sleep
 
 def load_html(*args, end="\\n", flush=False):
@@ -69,6 +71,7 @@ def index():
 
 @app.route("/run_code", methods=["POST"])
 def run_code():
+    # /run_code takes the code from the json and starts it using subprocess
     data = request.json
     code = data["code"]
     new_code = ""
@@ -84,11 +87,13 @@ def run_code():
 
 @app.route("/output.txt")
 def return_output_txt():
+    # returns the value of output.txt
     data = open("output.txt",'r').read()
     return jsonify({"output.txt": data})
 
 @app.route("/cancel")
 def stop_program():
+    # stops the program
     global proc
     proc.terminate()
     return "Success"
