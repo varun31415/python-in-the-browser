@@ -3,17 +3,21 @@
     <head>
         <title>Python in the browser</title>
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0" http-equiv="Cache-control" content="max-age=0">
+        <!-- Libraries (Bootstrap, Ace.js, jQuery) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+        <!-- CSS files-->
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
     <body>
         <div class="container">
             <h1 style="text-align: center; font-size: 65px;">Python in the browser</h1>
             <br>
+            <!-- Ace.js editor -->
             <div id="editor"></div>
             <br>
+            <!-- Bootstrap button to run the program -->
             <center><button class="btn btn-large btn-primary btn-block btn-lg" id="run">Run</button></center>
             <br>
             <center id="loader">
@@ -22,12 +26,15 @@
                 </div>
                 <br>
             </center>
+            <!-- Element which shows the output of the python code -->
             <div id="output-container" tabindex="0">
                 <pre id="output"><span style="color: green;">$</span> █</pre>
             </div>
             <br>
+            <!-- Error message in case server is down -->
             <div id="error"></div>
         </div>
+        <!-- JS files -->
         <script src="/static/js/index.js"></script>
     </body>
 </html>
