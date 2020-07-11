@@ -39,7 +39,8 @@ del sleep, load_html
 print()
 
 try: 
-	print("Hello world")
+	
+	print("Hello World")
 
 except Exception as e:
     from traceback import format_exc
