@@ -1,0 +1,33 @@
+#output-container {
+    width: 100%; 
+    padding: 10px; 
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background-color: black; 
+    color: white;
+    height: 300px;
+    outline: none;
+    word-wrap: break-word;
+}
+#output {
+    color: white;
+    height: 285px;
+    margin-bottom: 0px;
+    word-wrap: break-word;
+}
+#editor {
+    height: 250px; 
+    width: 100%; 
+}
+#error {
+    color: red;
+}
+.cursor {
+    background-color: transparent;
+    width: 10px; 
+    height: 20px;
+    border: 1px solid rgba(0,0,0,0.125);
+    display: inline-block;
+}
+#output-container:focus ~ .cursor {
+    background-color: rgba(0,0,0,0.125);
+}

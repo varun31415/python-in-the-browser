@@ -3,48 +3,10 @@
     <head>
         <title>Python in the browser</title>
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0" http-equiv="Cache-control" content="max-age=0">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
-        <style>
-            #output-container {
-                width: 100%; 
-                padding: 10px; 
-                font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-                background-color: black; 
-                color: white;
-                height: 300px;
-                outline: none;
-                word-wrap: break-word;
-            }
-            #output {
-                color: white;
-                height: 285px;
-                margin-bottom: 0px;
-                word-wrap: break-word;
-            }
-            #editor {
-                height: 250px; 
-                width: 100%; 
-            }
-            #error {
-                color: red;
-            }
-            .cursor {
-                background-color: transparent;
-                width: 10px; 
-                height: 20px;
-                border: 1px solid rgba(0,0,0,0.125);
-                display: inline-block;
-            }
-            #output-container:focus ~ .cursor {
-                background-color: rgba(0,0,0,0.125);
-            }
-        </style>
+        <link rel="stylesheet" href="/static/css/style.css">
     </head>
     <body>
         <div class="container">

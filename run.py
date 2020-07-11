@@ -41,7 +41,7 @@ def print(*args, end="\\n", flush=False):
 load_html('<span style="color: green;">$</span>', end="")
 for char in " python3 __main__.py":
     load_html(char, end="")
-    sleep(0.15)
+    sleep(0.05)
 del sleep, load_html
 print()
 
