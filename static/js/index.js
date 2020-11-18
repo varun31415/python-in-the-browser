@@ -19,14 +19,14 @@ $(function() {
                 url: "/cancel", 
                 success: function(response) {
                     // changes the button to btn-primary and interrupt to true when interrupt
-                    $("#run").html("Run")
+                    $("#run").html(`<i class="fa fa-play"></i>&nbsp;&nbsp;Run`)
                     $("#run").attr("class", "btn btn-primary btn-lg btn-block")
                     interrupt = true;
                 }
             })
         } else {
             // changes the button to btn-danger when starting program
-            $("#run").html("Interrupt")
+            $("#run").html(`<i class="fa fa-pause"></i>&nbsp;&nbsp;Interrupt`)
             $("#run").attr("class", "btn btn-danger btn-lg btn-block")
             $("#loader").html(`<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div><br><br>`)
             $("#error").fadeOut(100)
@@ -44,7 +44,7 @@ $(function() {
                     $("#loader").html("")
                     active = false; 
                     load_output()
-                    $("#run").html("Run")
+                    $("#run").html(`<i class="fa fa-play"></i>&nbsp;&nbsp;Run`)
                     $("#run").attr("class", "btn btn-primary btn-lg btn-block")
                     $("#error").fadeIn()
                 }, error: function() {

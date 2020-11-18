@@ -34,12 +34,12 @@ def print(*args, end="\n", flush=False):
 load_html('<span style="color: green;">$</span>', end="")
 for char in " python3 __main__.py":
     load_html(char, end="")
-    sleep(0.05)
+    sleep(0.01)
 del sleep, load_html
 print()
 
 try: 
-	print("hello World")
+	print("hello world")
 
 except Exception as e:
     from traceback import format_exc

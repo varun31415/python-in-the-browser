@@ -1,11 +1,11 @@
 import subprocess
-from flask import * 
+from flask import *
 
 app = Flask(__name__)
 
 global before_content, after_content, proc
 
-# before_content and after_content represent the content to place before and after the program to capture the output on output.txt. 
+# before_content and after_content represent the content to place before and after the program to capture the output on output.txt.
 
 before_content = """from time import sleep
 
@@ -43,7 +43,7 @@ def print(*args, end="\\n", flush=False):
 load_html('<span style="color: green;">$</span>', end="")
 for char in " python3 __main__.py":
     load_html(char, end="")
-    sleep(0.05)
+    sleep(0.01)
 del sleep, load_html
 print()
 
@@ -65,9 +65,11 @@ except Exception as e:
     print(new_trace[:-2])
 """
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 @app.route("/run_code", methods=["POST"])
 def run_code():
@@ -78,18 +80,20 @@ def run_code():
     for line in code.split("\n"):
         new_code += "\t" + line + "\n"
     code = new_code
-    open("output.py",'w').write(before_content + code + after_content)
-    open("output.txt",'w').write("")
-    global proc 
+    open("output.py", 'w').write(before_content + code + after_content)
+    open("output.txt", 'w').write("")
+    global proc
     proc = subprocess.Popen(['python3 output.py'], shell=True)
     proc.communicate()
     return jsonify({"success": True})
 
+
 @app.route("/output.txt")
 def return_output_txt():
     # returns the value of output.txt
-    data = open("output.txt",'r').read()
+    data = open("output.txt", 'r').read()
     return jsonify({"output.txt": data})
+
 
 @app.route("/cancel")
 def stop_program():
@@ -97,6 +101,7 @@ def stop_program():
     global proc
     proc.terminate()
     return "Success"
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=80, host="0.0.0.0")
